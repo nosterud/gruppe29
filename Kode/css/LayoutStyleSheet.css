@@ -1,0 +1,74 @@
+#header{
+	height: 150px;
+	width: 1100px;
+	top: 10px;
+	background-color: rgb(150, 150, 150);
+	position: relative;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+h1{
+	text-align: center;
+	position: relative;
+	top: 50px;
+}
+
+
+#settings{
+	height: 50px;
+	width: 770px;
+	top: 150px;
+	background-color: rgb(150, 150, 150);
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	border-style: solid;
+	border-color: rgb(130, 130, 130);
+
+}
+
+
+
+
+.allInputs{
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 46px;
+	border-style: solid;
+	border-left-width: 4px;
+	border-color: rgb(130, 130, 130);
+}
+
+#romkart {
+	height: 400px;
+	width: 770px;
+	top: 200px;
+	background-color: rgb(150, 150, 150);
+	position: relative;
+	margin-left: auto;
+	margin-right: auto; 
+
+}
+
+
+
+.alleRom{
+	height: 100px;
+	width: 100px;
+	position: relative;
+	background-color: rgb(180, 180, 180);
+	border-style: solid;
+	border-width: 5px;
+	border-color: rgb(130, 130, 130);
+	float: left;
+	text-align: center;
+}
+
+
+.alleRom:hover { 
+    background-color: rgb(200, 200, 200);
+}
+
+
