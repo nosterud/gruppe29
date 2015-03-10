@@ -1,0 +1,7 @@
+1. Åpne xampp
+2. Kjør Apache og mysql
+3. Finn xampp mappen og kopier filene til htdocs-mappen
+4. Gå til localhost/myphpadmin i nettleseren
+5. Lag en ny database som heter "reservasjon"
+6. Gå til localhost/setup
+7. Databasen skal nå være satt opp, filene kan testes ved å skrive localhost/*filnavn*.php i nettleseren

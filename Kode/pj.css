@@ -1,12 +1,9 @@
-#test
-{	
-	height: 200px;
-	width: 200px;
-	margin: 0;
-	background-color: solid black;
+//reservere rom
+#reservasjon
+{
+	position: absolute;
+	height:100px;
+	width: 100px;
+	background-color:green;
 }
 
-body 
-{
-	background-color: blue;
-}
