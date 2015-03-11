@@ -1,23 +1,30 @@
 #header{
-	height: 150px;
-	width: 1100px;
-	top: 10px;
-	background-color: rgb(150, 150, 150);
-	position: relative;
-	margin-left: auto;
-	margin-right: auto; 
+height: 120px;
+width: 1100px;
+top: 10px;
+background-color: rgb(150, 150, 150);
+position: relative;
+margin-left: 0px;
+ 
 }
 
+#naruto{
+height: 290px;
+width: 1300px;
+top:-30px;
+position: relative;
+left:-10px;
+}
 
 
 #settings{
 	height: 50px;
-	width: 770px;
+	width: 1300px;
 	top: 150px;
 	background-color: rgb(150, 150, 150);
 	position: relative;
 	margin-right: auto;
-	margin-left: auto;
+	left:-10px;
 	border-style: solid;
 	border-color: rgb(130, 130, 130);
 
@@ -38,11 +45,11 @@
 
 #romkart {
 	height: 400px;
-	width: 770px;
-	top: 200px;
+	width: 1300px;
+	top: 155px;
 	background-color: rgb(150, 150, 150);
 	position: relative;
-	margin-left: auto;
+	left:-10px;
 	margin-right: auto; 
 
 }
