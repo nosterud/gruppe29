@@ -30,7 +30,7 @@
 				echo "Ingen bruker";
 			} else {
 				setcookie("user", $bruker, time() + 3600, "/");
-				header("Location: loggedin.php");
+				header("Location: ../html/Layout.html");
 			}
 		}
 	}
