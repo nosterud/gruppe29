@@ -4,14 +4,15 @@
 <meta charset="utf-8">
 <?php
 	require 'config.php';
-	$brukernavn = $passord1 = $passord2 = "";
-	$brukerFeil = $passFeil1 = $passFeil2 = "";
+	$studentnummer = $passord1 = $passord2 = "";
+	$studFeil = $passFeil1 = $passFeil2 = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if (empty($_POST["brukernavn"])) {
-			$brukerFeil = "Obligatorisk!";
+		if (empty($_POST["studentnummer"])) {
+			$studFeil = "Obligatorisk!";
 		} else {
-			$brukernavn = test_input($_POST["brukernavn"]);
+			$studentnummer = test_input($_POST["studentnummer"]);
+			echo $studentnummer;
 		}
 		if (empty($_POST["passord1"])) {
 			$passFeil1 = "Obligatorisk!";
@@ -23,10 +24,11 @@
 		} else {
 			$passord2 = test_input($_POST["passord2"]);
 		}
-		if ($passord1 == $passord2 && $passord1 != "" && $passord2 != "" ) {
-			$sql = $database->prepare("INSERT INTO bruker (brukernavn, passord) VALUES ('$brukernavn', '$passord1');");
+		if (is_numeric($studentnummer) && $passord1 == $passord2 && $passord1 != "" && $passord2 != "" ) {
+			$sql = $database->prepare("INSERT INTO bruker (studentnummer, passord) VALUES ('$studentnummer', '$passord1');");
 			$sql->execute();
 			echo "Bruker registrert.";
+			sleep(3);
 			header("Location: login.php");
 		} else {
 			$passFeil1 = "Passordene må være like.";
@@ -44,7 +46,7 @@
 <body>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Brukernavn: <input type="text" name="brukernavn"><span class="error">* <?php echo $brukerFeil; ?><br><br>
+	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?><br><br>
 	Passord: <input type="text" name="passord1"><span class="error">* <?php echo $passFeil1; ?><br><br>
 	Skriv passord på nytt: <input type="text" name="passord2"><span class="error">* <?php echo $passFeil2; ?><br><br>
 	<input type="submit">

@@ -4,31 +4,31 @@
 <meta charset="utf-8">
 <?php
 	require 'config.php';
-	$brukernavn = $passord = $bruker = "";
-	$brukerFeil = $passFeil = "";
+	$studentnummer = $passord = $bruker = "";
+	$studFeil = $passFeil = "";
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if (empty($_POST["brukernavn"])) {
-			$brukerFeil = "Obligatorisk!";
+		if (empty($_POST["studentnummer"])) {
+			$studFeil = "Obligatorisk!";
 		} else {
-			$brukernavn = test_input($_POST["brukernavn"]);
+			$studentnummer = test_input($_POST["studentnummer"]);
 		}
 		if (empty($_POST["passord"])) {
 			$passFeil = "Obligatorisk!";
 		} else {
 			$passord = test_input($_POST["passord"]);
 		}
-		if ($brukerFeil == "" && $passFeil == "") {
-			$sql = $database->prepare("SELECT * FROM bruker WHERE brukernavn='$brukernavn' AND passord='$passord';");
+		if ($studFeil == "" && $passFeil == "") {
+			$sql = $database->prepare("SELECT * FROM bruker WHERE studentnummer='$studentnummer' AND passord='$passord';");
 			$sql->setFetchMode(PDO::FETCH_OBJ);
 			$sql->execute();
 			while ($testvar = $sql->fetch()) {
-				$bruker = $testvar->brukernavn;
+				$bruker = $testvar->studentnummer;
 			}
 			if ($bruker == "") {
 				echo "Ingen bruker";
 			} else {
-				setcookie("user", $bruker, time()+ (86400 * 30), "/");
+				setcookie("user", $bruker, time() + 3600, "/");
 				header("Location: loggedin.php");
 			}
 		}
@@ -45,7 +45,7 @@
 <body>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Brukernavn: <input type="text" name="brukernavn"><span class="error">* <?php echo $brukerFeil; ?><br><br>
+	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?><br><br>
 	Passord: <input type="text" name="passord"><span class="error">* <?php echo $passFeil; ?><br><br>
 	<input type="submit">
 </form>
