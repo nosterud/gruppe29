@@ -2,42 +2,27 @@
 <html>
 
 <head>
-<title>Layout</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="..\css\LayoutStyleSheet.css">
-
-
+	<title>Layout</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/LayoutStyleSheet.css">
 
 </head>
+
 <body>
 	<div id="header">
-		<h1>Header</h1></div>
-		<div id="settings">
-			
-			<form class="allInputs">
- 				 Velg dato:
-  					<input type="date" name="bday">
-			</form>
-				
-			<form class= "allInputs">
-  				Velg tidspunkt:
- 					<input type="time" name="usr_time">
-			</form>
-
-			<form class= "allInputs">
- 				 Velg antall:
-  					<input type="number" name="quantity" min="2" max="6">
-			</form>
-
-			<form>
-					<input type="radio" name="Prosjektor" value="Ja">Med prosjektor
-					<br>
-					<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor 
-					</form>
-
-			
-
-		</div>
+		<h1>Header</h1>
+	</div>
+	<div id="settings">
+		<form method="post" action="../php/Layout.php">
+			<div class="allInputs">Velg dato: <input type="date" name="bday"></div>
+			<div class="allInputs">Velg tidspunkt: <input type="time" name="usr_time"></div>
+			<div class="allInputs">Velg antall: <input type="number" name="quantity" min="2" max="6"></div>
+			<div><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
+			<br>
+			<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor</div>
+			<input type="submit">
+		</form>
+	</div>
 	<div id="romkart">
 
 		<a class="alleRom" id="Rom1" href="">Rom 01</a>
@@ -49,12 +34,6 @@
 		<a class="alleRom" id= "Rom7" href="">Rom 07</a>
 
 	</div>
-
-
-
-
-
-
 </body>
 
 </html>
