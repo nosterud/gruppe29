@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/Login.css">
 <?php
 	require 'config.php';
 	$studentnummer = $passord1 = $passord2 = "";
@@ -12,7 +13,6 @@
 			$studFeil = "Obligatorisk!";
 		} else {
 			$studentnummer = test_input($_POST["studentnummer"]);
-			echo $studentnummer;
 		}
 		if (empty($_POST["passord1"])) {
 			$passFeil1 = "Obligatorisk!";
@@ -34,21 +34,14 @@
 			$passFeil1 = "Passordene må være like.";
 		}
 	}
-
-	function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
 ?>
 </head>
 <body>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?><br><br>
-	Passord: <input type="text" name="passord1"><span class="error">* <?php echo $passFeil1; ?><br><br>
-	Skriv passord på nytt: <input type="text" name="passord2"><span class="error">* <?php echo $passFeil2; ?><br><br>
+	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
+	Passord: <input type="password" name="passord1"><span class="error">* <?php echo $passFeil1; ?></span><br><br>
+	Skriv passord på nytt: <input type="password" name="passord2"><span class="error">* <?php echo $passFeil2; ?></span><br><br>
 	<input type="submit">
 	</form>
 

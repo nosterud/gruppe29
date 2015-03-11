@@ -10,7 +10,7 @@ $database = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 function test_input($data) {
 	$data = trim($data);
 	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
+	$data = htmlentities($data);
 	return $data;
 }
 ?>

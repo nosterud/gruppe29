@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/Login.css">
 <?php
 	require 'config.php';
 	$studentnummer = $passord = $bruker = "";
@@ -33,20 +34,13 @@
 			}
 		}
 	}
-
-	function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
 ?>
 </head>
 <body>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?><br><br>
-	Passord: <input type="text" name="passord"><span class="error">* <?php echo $passFeil; ?><br><br>
+	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
+	Passord: <input type="password" name="passord"><span class="error">* <?php echo $passFeil; ?></span><br><br>
 	<input type="submit">
 </form>
 <br>
