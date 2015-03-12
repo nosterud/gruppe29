@@ -18,17 +18,21 @@ left:450px;
 
 
 #settings{
-	height: 50px;
+	height: 55px;
 	width: 1300px;
 	top: 150px;
-	background-color: rgb(150, 150, 150);
+	background-color: lightblue;
 	position: relative;
 	margin-right: auto;
+	margin-left: auto;
 	left:-10px;
-	border-style: solid;
-	border-color: rgb(130, 130, 130);
+	border-style: groove;
+	border-color: black;
+	border-width: 3px;
 
 }
+
+
 
 
 
@@ -37,10 +41,10 @@ left:450px;
 	position: relative;
 	float: left;
 	width: 200px;
-	height: 46px;
-	border-style: solid;
-	border-left-width: 4px;
-	border-color: rgb(130, 130, 130);
+	height: 54px;
+	border-style: groove;
+	border-width: 1px;
+	border-color: black;
 }
 
 #romkart {
