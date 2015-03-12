@@ -2,18 +2,18 @@
 height: 120px;
 width: 1100px;
 top: 10px;
-background-color: rgb(150, 150, 150);
+background-color: rgb(250, 250, 255);
 position: relative;
 margin-left: 0px;
  
 }
 
-#naruto{
-height: 290px;
-width: 1300px;
-top:-30px;
-position: relative;
-left:-10px;
+#logo{
+height: 230px;
+width: 300px;
+top:0px;
+position: absolute;
+left:450px;
 }
 
 
