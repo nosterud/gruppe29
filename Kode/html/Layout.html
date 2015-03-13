@@ -6,35 +6,35 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/LayoutStyleSheet.css">
 	<link rel="stylesheet" type="text/html" href="Login.html">
-
 </head>
 
 <body>
-		<div id="header">
-			<img id="naruto" src="../../Bilder/naruto.jpg">
+	<div id="header">
+			<img id="logo" src="../../Bilder/westerdals.png">
 	</div>
-	<div id="settings">
-		<form method="post" action="../php/Layout.php">
+	<form method="post" action="../php/Layout.php">
+		<div id="settings">
 			<div class="allInputs">Velg dato: <input type="date" name="bday"></div>
-			<div class="allInputs">Velg tidspunkt: <input type="time" name="usr_time"></div>
+			<div class="allInputs">Book fra tidspunkt:<input type="time" name="from_time">Til tidspunkt<input type="time" name="to_time" style="float: right;"></div>
 			<div class="allInputs">Velg antall: <input type="number" name="quantity" min="2" max="6"></div>
+			<div class="allInputs">Velg rom: <input type="number" name="rom" min="1" max="10"></div>
 			<div><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
 			<br>
 			<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor</div>
 			<input type="submit">
-		</form>
-	</div>
-	<div id="romkart">
+		</div>
+		<!--<div id="romkart">
 
-		<a class="alleRom" id="Rom1" href="">Rom 01</a>
-		<a class="alleRom" id= "Rom2" href="">Rom 02</a>
-		<a class="alleRom" id= "Rom3" href="">Rom 03</a>
-		<a class="alleRom" id= "Rom4" href="">Rom 04</a>
-		<a class="alleRom" id= "Rom5" href="">Rom 05</a>
-		<a class="alleRom" id= "Rom6" href="">Rom 06</a>
-		<a class="alleRom" id= "Rom7" href="">Rom 07</a>
+			Rom 01<br><input type="image" class="alleRom" value="Rom1">
+			Rom 02<br><input type="image" class="alleRom" value="Rom2">
+			Rom 03<br><input type="image" class="alleRom" value="Rom3">
+			Rom 04<br><input type="image" class="alleRom" value="Rom4">
+			Rom 05<br><input type="image" class="alleRom" value="Rom5">
+			Rom 06<br><input type="image" class="alleRom" value="Rom6">
+			Rom 07<br><input type="image" class="alleRom" value="Rom7">
 
-	</div>
+		</div>-->
+	</form>
 </body>
 
 </html>
