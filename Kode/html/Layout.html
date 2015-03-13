@@ -4,24 +4,59 @@
 <head>
 	<title>Layout</title>
 	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content ="1000">
 	<link rel="stylesheet" type="text/css" href="../css/LayoutStyleSheet.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" type="text/html" href="Login.html">
 
+	
 </head>
 
 <body>
 		<div id="header">
 			<img id="logo" src="../../Bilder/westerdals.png">
 	</div>
+
 	<div id="settings">
 		<form method="post" action="../php/Layout.php">
+			<nav>
+				<ul>
+					<li>
+						<label for="#date">Velg dato:
+							<input id="date" type="text" name="bday">
+						</label>
+					</li>
+			  		<li>
+			  			<label for="time"> 
+			  				Tidspunkt
+			  					<input type="text" id="time" data-format="HH:mm" data-template="HH : mm" name="datetime">
+			  			</label>
+			  		</li>
+			  		<li>
+			    		Rom
+			    		<ul>
+			      			<li>Rom 1</li>
+			      			<li>Rom 2</li>
+			      			<li>Rom 3</li>
+			      			<li>Rom 4</li>
+			      			<li>Rom 5</li>
+			    		</ul>
+			  		</li>
+			  		
+			  		<li>
+			  			Projektor
+			  				<input type="radio" name="Projektor" value="">
+			  		</li>
+				</ul>
+			</nav>
+
 			<div class="allInputs">Velg dato: <input type="date" name="bday"></div>
 			<div class="allInputs">Book fra tidspunkt:<input type="time" name="usr_time">Til tidspunkt<input type="time" name="usr_time" style="float: right;"></div>
 			<div class="allInputs">Velg antall: <input type="number" name="quantity" min="2" max="6"></div>
-			<div><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
+			<div class="allInputs"><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
 			<br>
-			<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor</div>
-			<input type="submit">
+			<div> <input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor<input type="submit"></div>
+			
 		</form>
 	</div>
 	<div id="romkart">
@@ -35,6 +70,17 @@
 		<a class="alleRom" id= "Rom7" href="">Rom 07</a>
 
 	</div>
+	<script src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui/jquery-ui.min.js"></script>
+		<script src="../js/combodate.js"></script>
+	<script>
+	$(function(){
+    $('#time').combodate({ 
+        minuteStep: 1
+    }); 
+    $("#date").datepicker();
+});
+</script>
 </body>
 
 </html>
