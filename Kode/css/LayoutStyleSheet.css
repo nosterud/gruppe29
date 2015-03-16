@@ -1,3 +1,10 @@
+.wrapper{
+  overflow: hidden;
+  position: absolute;
+  left:0px;
+  margin-right: auto;
+}
+
 #header{
 height: 120px;
 width: 1100px;
@@ -23,7 +30,7 @@ left:450px;
   background-color: lightblue;
   top: 155px;
   position: relative;
-  margin-right: auto;
+  margin-right: 0px;
   left:-10px;
   border-style: solid;
   border-color:black;
@@ -85,9 +92,10 @@ left:450px;
   position: relative;
   height: 50px;
   width: 1300px;
-  bottom: 0px;
+  bottom: 0;
   background-color: lightblue;
   border:solid;
+  left:0;
   border-color:solid black;
   border-width:3px;
 }
