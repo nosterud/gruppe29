@@ -5,6 +5,7 @@
 	<title>Layout</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/LayoutStyleSheet.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" type="text/html" href="Login.html">
 
 </head>
@@ -20,9 +21,7 @@
 			<nav>
 				<ul>
 					<li>
-						<label for="#date">Velg dato:
-							<input id="date" type="text" name="bday">
-						</label>
+						<p>Date: <input type="text" id="date"></p>
 					</li>
 			  		<li>
 			  			<label for="time"> 
@@ -78,8 +77,8 @@
 
 	</div>
 	<script src="../js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="../js/jquery-ui/jquery-ui.min.js"></script>
-		<script src="../js/combodate.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui/jquery-ui.js"></script>
+	<script src="../js/combodate.js"></script>
 	<script>
 	$(function(){
     $('#time').combodate({ 
@@ -89,7 +88,7 @@
 });
 </script>
 
-	<div id="settings">
+	<!--<div id="settings">
 		<form method="post" action="../php/Layout.php">
 			<div class="allInputs">Velg dato: <input type="date" name="bday"></div>
 			<div class="allInputs">Book fra tidspunkt:<input type="time" name="from_time"><br>Til tidspunkt<input type="time" name="to_time" style="float: right;"></div>
@@ -97,10 +96,10 @@
 			<div class="allInputs">Velg rom: <input type="number" name="rom" min="1" max="10"></div>
 			<div><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
 			<br>
-			<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor</div>
+		<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor</div>
 			<input type="submit">
 		</form>
-	</div>
+	</div>-->
 	<iframe src="../php/list.php" style="position: absolute;top: 334px; left: 0px;"></iframe>
 	<!--<div id="romkart">
 
@@ -113,7 +112,8 @@
 		<a class="alleRom" id= "Rom7" href="">Rom 07</a>
 
 	</div>-->
-
+<div id="bottomHeader">
+</div>
 </body>
 
 </html>

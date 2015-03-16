@@ -20,9 +20,8 @@ left:450px;
 #settings{
   height: 50px;
   width: 1300px;
-  top: 155px;
   background-color: lightblue;
-  top: 150px;
+  top: 155px;
   position: relative;
   margin-right: auto;
   left:-10px;
@@ -33,14 +32,8 @@ left:450px;
 
 .ui-datepicker-calendar {
   background-color: white; 
-  border-color: rgb(130, 130, 130);
 }
 
-
-
-
-
-}
 
 
 .allInputs{
@@ -88,6 +81,17 @@ left:450px;
     background-color: rgb(200, 200, 200);
 }
 
+#bottomHeader{
+  position: relative;
+  height: 50px;
+  width: 1300px;
+  bottom: 0px;
+  background-color: lightblue;
+  border:solid;
+  border-color:solid black;
+  border-width:3px;
+}
+
 
 <!--nav-bar-->
 body {
@@ -111,7 +115,7 @@ ul li {
   margin-right: -4px;
   position: relative;
   padding: 15px 20px;
-  background: light-blue;
+  top:-13px;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
