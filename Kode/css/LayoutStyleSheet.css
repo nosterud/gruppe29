@@ -36,6 +36,7 @@ margin-left: auto;
   left:-10px;
   border-style: solid;
   border-color:black;
+   border-left:transparent;
   border-width: 3px;
 }
 
@@ -86,6 +87,7 @@ margin-left: auto;
   background-color: lightblue;
   border:solid;
   border-color:solid black;
+  border-left:transparent;
   border-width:3px;
 }
 
