@@ -1,36 +1,38 @@
 .wrapper{
-  overflow: hidden;
-  position: absolute;
-  left:0px;
-  margin-right: auto;
+width:100%;
+overflow: hidden;
+position: absolute;
+left:0px;
+ 
 }
 
 #header{
 height: 120px;
-width: 1100px;
+width: auto;
 top: 10px;
 background-color: white;
 position: relative;
 margin-left: 0px;
+
  
 }
 
 #logo{
+  display: block;
 height: 230px;
 width: 300px;
-top:0px;
-position: absolute;
-left:450px;
+position: relative;
+margin-right: auto;
+margin-left: auto;
 }
 
 
 #settings{
   height: 50px;
-  width: 1300px;
+  width: auto;
   background-color: lightblue;
   top: 155px;
   position: relative;
-  margin-right: 0px;
   left:-10px;
   border-style: solid;
   border-color:black;
@@ -43,28 +45,15 @@ left:450px;
 
 
 
-.allInputs{
-	position: relative;
-	float: left;
-	width: 200px;
-	height: 54px;
-	border-style: groove;
-	border-color: black;
-	border-width:1px;
-  visibility: hidden;
-	height: 46px;
-	border-style: solid;
-	border-left-width: 4px;
-	border-color: rgb(130, 130, 130);
-}
+
 
 #romkart {
 	height: 400px;
-	width: 1300px;
+	width: auto;
 	top: 155px;
 	background-color: rgb(150, 150, 150);
 	position: relative;
-	left:-10px;
+	left:0px;
 	margin-right: auto; 
 
 }
@@ -91,13 +80,25 @@ left:450px;
 #bottomHeader{
   position: relative;
   height: 50px;
-  width: 1300px;
-  bottom: 0;
+  width: auto;
+  bottom: 0px;
+  left: 0px;
   background-color: lightblue;
   border:solid;
-  left:0;
   border-color:solid black;
   border-width:3px;
+}
+
+#settings{
+  position: relative;
+  height: 50px;
+  width: auto;
+  top: 155px;
+  left:0px;
+  background-color: lightblue;
+  border-style: solid;
+  border-color: solid black;
+  border-width: 3px;
 }
 
 
