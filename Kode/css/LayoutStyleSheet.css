@@ -1,26 +1,29 @@
 .wrapper{
-  overflow: hidden;
-  position: absolute;
-  left:0px;
-  margin-right: auto;
+width:1300px;
+overflow: hidden;
+position: absolute;
+left:0px;
+ 
 }
 
 #header{
 height: 120px;
-width: 1100px;
+width: auto;
 top: 10px;
 background-color: white;
 position: relative;
 margin-left: 0px;
+
  
 }
 
 #logo{
+  display: block;
 height: 230px;
 width: 300px;
-top:0px;
-position: absolute;
-left:450px;
+position: relative;
+margin-right: auto;
+margin-left: auto;
 }
 
 
@@ -43,20 +46,7 @@ left:450px;
 
 
 
-.allInputs{
-	position: relative;
-	float: left;
-	width: 200px;
-	height: 54px;
-	border-style: groove;
-	border-color: black;
-	border-width:1px;
-  visibility: hidden;
-	height: 46px;
-	border-style: solid;
-	border-left-width: 4px;
-	border-color: rgb(130, 130, 130);
-}
+
 
 #romkart {
 	height: 400px;
@@ -96,6 +86,7 @@ left:450px;
   background-color: lightblue;
   border:solid;
   left:0;
+  border-left:transparent;
   border-color:solid black;
   border-width:3px;
 }
