@@ -1,5 +1,5 @@
 .wrapper{
-width:1300px;
+width:100%;
 overflow: hidden;
 position: absolute;
 left:0px;
@@ -29,11 +29,10 @@ margin-left: auto;
 
 #settings{
   height: 50px;
-  width: 1300px;
+  width: auto;
   background-color: lightblue;
   top: 155px;
   position: relative;
-  margin-right: 0px;
   left:-10px;
   border-style: solid;
   border-color:black;
@@ -50,11 +49,11 @@ margin-left: auto;
 
 #romkart {
 	height: 400px;
-	width: 1300px;
+	width: auto;
 	top: 155px;
 	background-color: rgb(150, 150, 150);
 	position: relative;
-	left:-10px;
+	left:0px;
 	margin-right: auto; 
 
 }
@@ -81,14 +80,25 @@ margin-left: auto;
 #bottomHeader{
   position: relative;
   height: 50px;
-  width: 1300px;
-  bottom: 0;
+  width: auto;
+  bottom: 0px;
+  left: 0px;
   background-color: lightblue;
   border:solid;
-  left:0;
-  border-left:transparent;
   border-color:solid black;
   border-width:3px;
+}
+
+#settings{
+  position: relative;
+  height: 50px;
+  width: auto;
+  top: 155px;
+  left:0px;
+  background-color: lightblue;
+  border-style: solid;
+  border-color: solid black;
+  border-width: 3px;
 }
 
 
