@@ -25,9 +25,18 @@ require 'config.php';
 				$sql->execute();
 				while($test = $sql->fetch()) {
 					if ($rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $prosjektor == 1 && $rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->fratid)) {
-						echo "Noen har allerede reservert prosjektoren på denne tiden";
+						echo "Noen har allerede reservert prosjektoren på denne tiden<br>";
 						$tid1 = "";
 					}
+				}
+			}
+			$sql = $database->prepare("SELECT COUNT(student) as num FROM reservasjon where romnummer = $rom;");
+			$sql->setFetchMode(PDO::FETCH_OBJ);
+			$sql->execute();
+			while ($test = $sql->fetch()) {
+				if ($test->num == 4) {
+					echo "Rommet er fullt! <br>";
+					$rom = "";
 				}
 			}
 			if ($dato == "" || $tid1 == "" || $tid2 == "" || $rom == 0 || $ant == 0 || $bruker == "") {
