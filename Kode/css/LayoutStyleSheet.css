@@ -20,32 +20,19 @@ left:420px;
 #settings{
 	height: 55px;
 	width: 1300px;
-<<<<<<< HEAD
 	top: 155px;
-=======
-	top: 150px;
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 	background-color: lightblue;
 	position: relative;
 	margin-right: auto;
-	margin-left: auto;
 	left:-10px;
-<<<<<<< HEAD
 	border-style: solid;
 	border-color:black;
 	border-width: 3px;
 }
-=======
-	border-style: groove;
-	border-color: black;
-	border-width: 3px;
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 
 .ui-datepicker-calendar {
   background-color: white;
 }
-
-
 
 
 
@@ -56,14 +43,9 @@ left:420px;
 	width: 200px;
 	height: 54px;
 	border-style: groove;
-<<<<<<< HEAD
 	border-color: black;
 	border-width:1px;
   visibility: hidden;
-=======
-	border-width: 1px;
-	border-color: black;
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 }
 
 #romkart {
@@ -130,6 +112,11 @@ ul li:hover {
   background: #555;
   color: #fff;
 }
+romkart:target{
+  color:black;
+
+}
+
 ul li ul {
   padding: 0;
   position: absolute;
@@ -163,5 +150,6 @@ ul li:hover ul {
   visibility: visible;
   z-index: 1000;
 }
+
 
 

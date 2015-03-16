@@ -8,18 +8,14 @@
 	<link rel="stylesheet" type="text/css" href="../css/LayoutStyleSheet.css">
 	<link rel="stylesheet" type="text/css" href="../js/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" type="text/html" href="Login.html">
-<<<<<<< HEAD
 
 	
-=======
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 </head>
 
 <body>
-	<div id="header">
+		<div id="header">
 			<img id="logo" src="../../Bilder/westerdals.png">
 	</div>
-<<<<<<< HEAD
 
 	<div id="settings">
 		<form method="post" action="../php/Layout.php">
@@ -37,31 +33,41 @@
 			  			</label>
 			  		</li>
 			  		<li>
+			  			Antall
+			  			<ul>
+			  			<li>1</li>
+			  			<li>2</li>
+			  			<li>3</li>
+			  			<li>4</li>
+			  			<li>5</li>
+			  			<li>6</li>
+			  			<li>7</li>
+			  		</ul>
+			  		</li>
+			  		<li>
 			    		Rom
 			    		<ul>
-			      			<li>Rom 1</li>
-			      			<li>Rom 2</li>
-			      			<li>Rom 3</li>
-			      			<li>Rom 4</li>
-			      			<li>Rom 5</li>
+			      			<li>Rom 01</li>
+			      			<li>Rom 02</li>
+			      			<li>Rom 03</li>
+			      			<li>Rom 04</li>
+			      			<li>Rom 05</li>
 			    		</ul>
 			  		</li>
 			  		
-			  		<li>
-			  			Projektor
-			  				<input type="radio" name="Projektor" value="">
+			  		<li>	
+			  				Projektor
+			  				<input type="checkbox" name="Projektor" value="">
+			  				<input type="submit">
+
 			  		</li>
+
 				</ul>
 			</nav>
 
-=======
-	<form method="post" action="../php/Layout.php">
-		<div id="settings">
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 			<div class="allInputs">Velg dato: <input type="date" name="bday"></div>
-			<div class="allInputs">Book fra tidspunkt:<input type="time" name="from_time">Til tidspunkt<input type="time" name="to_time" style="float: right;"></div>
+			<div class="allInputs">Book fra tidspunkt:<input type="time" name="usr_time">Til tidspunkt<input type="time" name="usr_time" style="float: right;"></div>
 			<div class="allInputs">Velg antall: <input type="number" name="quantity" min="2" max="6"></div>
-<<<<<<< HEAD
 			<div class="allInputs"><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
 			<br>
 			<div> <input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor<input type="submit"></div>
@@ -69,25 +75,15 @@
 		</form>
 	</div>
 	<div id="romkart">
-=======
-			<div class="allInputs">Velg rom: <input type="number" name="rom" min="1" max="10"></div>
-			<div><input type="radio" name="Prosjektor" value="Ja">Med prosjektor
-			<br>
-			<input type="radio" name="Prosjektor" value="Nei">Uten Prosjektor</div>
-			<input type="submit">
-		</div>
-		<!--<div id="romkart">
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 
-			Rom 01<br><input type="image" class="alleRom" value="Rom1">
-			Rom 02<br><input type="image" class="alleRom" value="Rom2">
-			Rom 03<br><input type="image" class="alleRom" value="Rom3">
-			Rom 04<br><input type="image" class="alleRom" value="Rom4">
-			Rom 05<br><input type="image" class="alleRom" value="Rom5">
-			Rom 06<br><input type="image" class="alleRom" value="Rom6">
-			Rom 07<br><input type="image" class="alleRom" value="Rom7">
+		<a class="alleRom" id="Rom1" href="">Rom 01</a>
+		<a class="alleRom" id= "Rom2" href="">Rom 02</a>
+		<a class="alleRom" id= "Rom3" href="">Rom 03</a>
+		<a class="alleRom" id= "Rom4" href="">Rom 04</a>
+		<a class="alleRom" id= "Rom5" href="">Rom 05</a>
+		<a class="alleRom" id= "Rom6" href="">Rom 06</a>
+		<a class="alleRom" id= "Rom7" href="">Rom 07</a>
 
-<<<<<<< HEAD
 	</div>
 	<script src="../js/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui/jquery-ui.min.js"></script>
@@ -100,10 +96,6 @@
     $("#date").datepicker();
 });
 </script>
-=======
-		</div>-->
-	</form>
->>>>>>> 7fe01ea808c63c916789426fe6afc4aa7a76e297
 </body>
 
 </html>
