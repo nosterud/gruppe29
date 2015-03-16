@@ -19,6 +19,17 @@ require 'config.php';
 				//echo "Prosjektor nei<br>";
 				$prosjektor = 0;
 			}
+			if ($prosjektor == 1) {
+				$sql = $database->prepare("SELECT romnummer, dato, fratid, tiltid, prosjektor FROM reservasjon WHERE prosjektor = 1;");
+				$sql->setFetchMode(PDO::FETCH_OBJ);
+				$sql->execute();
+				while($test = $sql->fetch()) {
+					if ($rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $prosjektor == 1 && $rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->fratid)) {
+						echo "Noen har allerede reservert prosjektoren på denne tiden";
+						$tid1 = "";
+					}
+				}
+			}
 			if ($dato == "" || $tid1 == "" || $tid2 == "" || $rom == 0 || $ant == 0 || $bruker == "") {
 				echo "Alle feltene må være fylt!";
 			} else {
