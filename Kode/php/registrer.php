@@ -27,9 +27,8 @@
 		if (is_numeric($studentnummer) && $passord1 == $passord2 && $passord1 != "" && $passord2 != "" ) {
 			$sql = $database->prepare("INSERT INTO bruker (studentnummer, passord) VALUES ('$studentnummer', '$passord1');");
 			$sql->execute();
-			echo "Bruker registrert.";
-			sleep(3);
-			header("Location: login.php");
+			echo "Bruker registrert, du vil bli sendt tilbake til login siden.";
+			header("refresh: 5; url=login.php");
 		} else {
 			$passFeil1 = "Passordene må være like.";
 		}
