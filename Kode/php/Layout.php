@@ -34,8 +34,8 @@ require 'config.php';
 			$sql->setFetchMode(PDO::FETCH_OBJ);
 			$sql->execute();
 			while ($test = $sql->fetch()) {
-				if ($test->num == 4) {
-					echo "Rommet er fullt! <br>";
+				if ($ant + $test->num > 4) {
+					echo "Rommet har ikke plass! <br>";
 					$rom = "";
 				}
 			}
@@ -44,8 +44,10 @@ require 'config.php';
 			} else {
 				if ($tid1 < $tid2) {
 					if ($dato > date("Y-m-d") || $dato == date("Y-m-d") && strtotime($tid1) > time()) {
-						$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', $prosjektor);");
-						$sql->execute();
+						for ($i = 1; $i < $ant; $i++) {
+							$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$i', $prosjektor);");
+							$sql->execute();
+						}
 						header("refresh: 1; url=../html/Layout.html");
 					} else {
 						echo "Bookingen kan ikke være før nå.";
@@ -58,5 +60,6 @@ require 'config.php';
 			echo "Du er ikke logget inn, du vil bli dirigert til login-siden.";
 			header("refresh: 10; url=login.php");
 		}
+		echo "<br><a href='../html/Layout.html'>Tilbake!</a>";
 	}
 ?>
