@@ -1,3 +1,31 @@
+.wrapper{ 
+top:100px;	
+width:300px;
+overflow: hidden;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+border:double;
+border-color:solid black;
+overflow: hidden;
+border-width:3px;
+
+
+
+ 
+}
+
+#Logo{
+position: relative;
+left:30px;
+}
+
+
+#passord{
+	position: relative;
+	left: 53px;
+}
+
 .error{
 	color: rgb(255, 0, 0);
 }

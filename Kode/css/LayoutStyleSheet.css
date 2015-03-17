@@ -73,6 +73,38 @@ margin-left: auto;
 }
 
 #rom1{
+height: 175px;
+width: 181px;
+left: 396px;
+top: 300px;
+transform: skew(-39deg, 14deg);
+}
+
+#rom2{
+height: 167px;
+width: 181px;
+left: 207px;
+top: 253px;
+transform: skew(-42deg, 15deg);
+}
+
+#rom3{
+height: 189px;
+width: 191px;
+left: 716px;
+top: 380px;
+transform: skew(-32deg, 15deg);
+}
+
+#rom4{
+height: 196px;
+width: 192px;
+left: 916px;
+top: 428px;
+transform: skew(-29deg, 15deg);
+}
+
+#rom5{
 height: 133px;
 width: 168px;
 left: 421px;
@@ -81,7 +113,7 @@ transform: skew(-43deg, 13deg);
 
 }
 
-#rom2{
+#rom6{
 height: 140px;
 width: 173px;
 left: 592px;
@@ -89,7 +121,7 @@ top: 75px;
 transform: skew(-39deg, 13deg);
 }
 
-#rom3{
+#rom7{
 height: 155px;
 width: 174px;
 left: 887px;
@@ -97,47 +129,13 @@ top: 138px;
 transform: skew(-31deg, 13deg);
 }
 
-#rom4{
+#rom8{
 height: 162px;
 width: 181px;
 left: 1065px;
 top: 177px;
 transform: skew(-28deg, 13deg);
 }
-
-#rom5{
-height: 167px;
-width: 181px;
-left: 207px;
-top: 253px;
-transform: skew(-42deg, 15deg);
-}
-
-#rom6{
-height: 175px;
-width: 181px;
-left: 396px;
-top: 300px;
-transform: skew(-39deg, 14deg);
-}
-
-#rom7{
-height: 189px;
-width: 191px;
-left: 716px;
-top: 380px;
-transform: skew(-32deg, 15deg);
-}
-
-#rom8{
-height: 196px;
-width: 192px;
-left: 916px;
-top: 428px;
-transform: skew(-29deg, 15deg);
-}
-
-
 
 
 

@@ -30,13 +30,17 @@ require 'config.php';
 					}
 				}
 			}
-			$sql = $database->prepare("SELECT COUNT(student) as num FROM reservasjon where romnummer = $rom;");
+			$sql = $database->prepare("SELECT antall, dato, fratid, tiltid FROM reservasjon where romnummer = $rom;");
 			$sql->setFetchMode(PDO::FETCH_OBJ);
 			$sql->execute();
+			$count = 0;
 			while ($test = $sql->fetch()) {
-				if ($ant + $test->num > 4) {
-					echo "Rommet har ikke plass! <br>";
-					$rom = "";
+				if ($test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->fratid)) {
+					$count += $ant;
+					if ($count + $test->num > 4) {
+						echo "Rommet har ikke plass! <br>";
+						$rom = "";
+					}
 				}
 			}
 			if ($dato == "" || $tid1 == "" || $tid2 == "" || $rom == 0 || $ant == 0 || $bruker == "") {
@@ -58,7 +62,7 @@ require 'config.php';
 			}
 		} else {
 			echo "Du er ikke logget inn, du vil bli dirigert til login-siden.";
-			header("refresh: 10; url=login.php");
+			header("refresh: 5; url=login.php");
 		}
 		echo "<br><a href='../html/Layout.html'>Tilbake!</a>";
 	}
