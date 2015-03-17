@@ -1,0 +1,36 @@
+.wrapper{ 
+top:100px;	
+width:300px;
+overflow: hidden;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+border:double;
+border-color:solid black;
+overflow: hidden;
+border-width:3px; 
+}
+
+#Logo{
+	position: relative;
+	left:30px;
+}
+
+#passord{
+	position: relative;
+	left: 53px;
+}
+
+#passord2{
+	position: relative;
+	left:-10px;
+}
+
+#pointer{
+	position: absolute;
+	height: 350px;
+	width: 350px;
+	bottom: 0;
+	left:0;
+
+}
