@@ -38,10 +38,13 @@
 </head>
 <body>
 
-<img src="../../Bilder/westerdals.png">
-<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
+<section class="wrapper">
+	<div id="Logo"><img src="../../Bilder/westerdals.png">
+
+
+<form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
 	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
-	Passord: <input type="password" name="passord"><span class="error">* <?php echo $passFeil; ?></span><br><br>
+	Passord:                    <input id="passord" type="password" name="passord"><span class="error">* <?php echo $passFeil; ?></span><br><br>
 	
 	<input type="submit">
 </form>
@@ -50,6 +53,6 @@
 
 
 
-
+</section>	
 </body>
 </html>
