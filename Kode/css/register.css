@@ -8,11 +8,7 @@ margin-right: auto;
 border:double;
 border-color:solid black;
 overflow: hidden;
-border-width:3px;
-
-
-
- 
+border-width:3px; 
 }
 
 #Logo{
@@ -20,20 +16,12 @@ position: relative;
 left:30px;
 }
 
-
 #passord{
 	position: relative;
 	left: 53px;
 }
 
-#hottie{
-	position: absolute;
-	height:400px;
-	width: 400px;
-	bottom:0;
-	right:0px;
-}
-
-.error{
-	color: rgb(255, 0, 0);
+#passord2{
+	position: relative;
+	left:-10px;
 }

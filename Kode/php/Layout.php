@@ -30,17 +30,13 @@ require 'config.php';
 					}
 				}
 			}
-			$sql = $database->prepare("SELECT antall, dato, fratid, tiltid FROM reservasjon where romnummer = $rom;");
+			$sql = $database->prepare("SELECT COUNT(student) as num FROM reservasjon where romnummer = $rom;");
 			$sql->setFetchMode(PDO::FETCH_OBJ);
 			$sql->execute();
-			$count = 0;
 			while ($test = $sql->fetch()) {
-				if ($test->dato == $dato && strtotime($tid1) < strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) > strtotime($test->fratid) && strtotime($tid2) < strtotime($test->tiltid)) {
-					$count += $ant;
-					if ($count + $test->num > 4) {
-						echo "Rommet har ikke plass! <br>";
-						$rom = "";
-					}
+				if ($ant + $test->num > 4) {
+					echo "Rommet har ikke plass! <br>";
+					$rom = "";
 				}
 			}
 			if ($dato == "" || $tid1 == "" || $tid2 == "" || $rom == 0 || $ant == 0 || $bruker == "") {
@@ -48,7 +44,7 @@ require 'config.php';
 			} else {
 				if ($tid1 < $tid2) {
 					if ($dato > date("Y-m-d") || $dato == date("Y-m-d") && strtotime($tid1) > time()) {
-						for ($i = 1; $i <= $ant; $i++) {
+						for ($i = 1; $i < $ant; $i++) {
 							$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$i', $prosjektor);");
 							$sql->execute();
 						}
@@ -62,7 +58,7 @@ require 'config.php';
 			}
 		} else {
 			echo "Du er ikke logget inn, du vil bli dirigert til login-siden.";
-			header("refresh: 5; url=login.php");
+			header("refresh: 10; url=login.php");
 		}
 		echo "<br><a href='../html/Layout.html'>Tilbake!</a>";
 	}

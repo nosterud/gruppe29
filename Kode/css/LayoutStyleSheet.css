@@ -28,12 +28,12 @@ margin-left: auto;
 
 
 #settings{
-  position: relative;
   height: 50px;
   width: auto;
   background-color: lightblue;
   top: 155px;
-  left: 0px;
+  position: fixed;
+  left:-10px;
   border-style: solid;
   border-color:black;
   border-left:transparent;
@@ -65,78 +65,6 @@ margin-left: auto;
   height: 690px;
 }
 
-.alleRom{
-  position: absolute;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-}
-
-#rom1{
-height: 175px;
-width: 181px;
-left: 396px;
-top: 300px;
-transform: skew(-39deg, 14deg);
-}
-
-#rom2{
-height: 167px;
-width: 181px;
-left: 207px;
-top: 253px;
-transform: skew(-42deg, 15deg);
-}
-
-#rom3{
-height: 189px;
-width: 191px;
-left: 716px;
-top: 380px;
-transform: skew(-32deg, 15deg);
-}
-
-#rom4{
-height: 196px;
-width: 192px;
-left: 916px;
-top: 428px;
-transform: skew(-29deg, 15deg);
-}
-
-#rom5{
-height: 133px;
-width: 168px;
-left: 421px;
-top: 37px;
-transform: skew(-43deg, 13deg);
-
-}
-
-#rom6{
-height: 140px;
-width: 173px;
-left: 592px;
-top: 75px;
-transform: skew(-39deg, 13deg);
-}
-
-#rom7{
-height: 155px;
-width: 174px;
-left: 887px;
-top: 138px;
-transform: skew(-31deg, 13deg);
-}
-
-#rom8{
-height: 162px;
-width: 181px;
-left: 1065px;
-top: 177px;
-transform: skew(-28deg, 13deg);
-}
-
 
 
 
@@ -157,7 +85,17 @@ footer{
   border-width:3px;
 }
 
-
+#settings{
+  position: relative;
+  height: 50px;
+  width: auto;
+  top: 155px;
+  left:0px;
+  background-color: lightblue;
+  border-style: solid;
+  border-color: solid black;
+  border-width: 3px;
+}
 
 
 <!--nav-bar-->
@@ -195,7 +133,10 @@ ul li:hover {
   background: #555;
   color: #fff;
 }
+romkart:target{
+  color:black;
 
+}
 
 ul li ul {
   padding: 0;

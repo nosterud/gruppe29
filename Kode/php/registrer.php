@@ -37,12 +37,17 @@
 </head>
 <body>
 
+<section class="wrapper">
+	<div id="Logo"><img src="../../Bilder/westerdals.png">
+
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
 	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
-	Passord: <input type="password" name="passord1"><span class="error">* <?php echo $passFeil1; ?></span><br><br>
-	Skriv passord på nytt: <input type="password" name="passord2"><span class="error">* <?php echo $passFeil2; ?></span><br><br>
+	Passord: <input id="passord" type="password" name="passord1"><span class="error">* <?php echo $passFeil1; ?></span><br><br>
+	Bekreft passord: <input id="passord2" type="password" name="passord2"><span class="error">* <?php echo $passFeil2; ?></span><br><br>
 	<input type="submit">
 	</form>
+
+</section>
 
 </body>
 </html>
