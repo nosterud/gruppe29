@@ -6,7 +6,6 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/LayoutStyleSheet.css">
 	<link rel="stylesheet" type="text/css" href="../js/jquery-ui/jquery-ui.css">
-	<link rel="stylesheet" type="text/html" href="Login.html">
 
 </head>
 
@@ -22,18 +21,18 @@
 			<nav>
 				<ul>
 					<li>
-						<p>Date: <input type="text" id="date" name="bday"></p>
+						<p>Date: <input type="date" id="date" name="bday"></p>
 					</li>
 			  		<li>
 			  			<label for="time">
 			  				Fra tid:
-			  					<input type="datetime" id="time" data-format="HH:mm" data-template="HH : mm" name="from_time">
+			  					<input type="time" id="time" min="08:00" max="18:45" step="900" name="from_time">
 			  			</label>
 					</li>
 					<li>
 						<label for="time2">
 							Til tid:
-								<input type="text" id="time2" data-format="HH:mm" data-template="HH : mm" name="to_time">
+								<input type="time" id="time2" min="08:15" max="19:00" step="900" name="to_time">
 						</label>
 			  		</li>
 			  		<li>
@@ -73,15 +72,15 @@
 
 	<!--ROM KART -->
 		<div id="container">
-  			 <div class="alleRom" id="rom1"></div>
-    		<div class="alleRom" id="rom2"></div>
-     		<div class="alleRom" id="rom3"></div>
-      		<div class="alleRom" id="rom4"></div>
-       		<div class="alleRom" id="rom5"></div>
-       		<div class="alleRom" id="rom6"></div>
-       		<div class="alleRom" id="rom7"></div>
-       		<div class="alleRom" id="rom8"></div>
-   				<img id="bygning" src="..\..\Bilder\bygning2.png">
+       		<iframe class="alleRom" id="rom1" src="../php/rom.php?nummer=1"></iframe>
+       		<iframe class="alleRom" id="rom2" src="../php/rom.php?nummer=2"></iframe>
+       		<iframe class="alleRom" id="rom3" src="../php/rom.php?nummer=3"></iframe>
+       		<iframe class="alleRom" id="rom4" src="../php/rom.php?nummer=4"></iframe>
+  			<iframe class="alleRom" id="rom5" src="../php/rom.php?nummer=5"></iframe>
+    		<iframe class="alleRom" id="rom6" src="../php/rom.php?nummer=6"></iframe>
+     		<iframe class="alleRom" id="rom7" src="../php/rom.php?nummer=7"></iframe>
+      		<iframe class="alleRom" id="rom8" src="../php/rom.php?nummer=8"></iframe>
+			<img id="bygning" src="..\..\Bilder\bygning2.png">
 	</div>
 
 	
