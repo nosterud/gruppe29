@@ -49,35 +49,27 @@ margin-left: auto;
 
 
 
-#romkart {
-	height: 400px;
-	width: auto;
-	top: 155px;
-	background-color: rgb(150, 150, 150);
-	position: relative;
-	left:0px;
-	margin-right: auto; 
+#container {
+  height: 900px;
+  width: auto;
+  top: 155px;
+  background-color: rgb(150, 150, 150);
+  position: relative;
+  left:0px;
+  margin-right: auto; 
 
+}
+
+#bygning{
+  width: 1351px;
+  height: 690px;
 }
 
 
 
-.alleRom{
-	height: 100px;
-	width: 100px;
-	position: relative;
-	background-color: rgb(180, 180, 180);
-	border-style: solid;
-	border-width: 5px;
-	border-color: rgb(130, 130, 130);
-	float: left;
-	text-align: center;
-}
 
 
-.alleRom:hover { 
-    background-color: rgb(200, 200, 200);
-}
+
 
 footer{
   position: fixed;
