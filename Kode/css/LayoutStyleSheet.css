@@ -36,7 +36,8 @@ margin-left: auto;
   left:-10px;
   border-style: solid;
   border-color:black;
-   border-left:transparent;
+  border-left:transparent;
+  border-right:transparent;
   border-width: 3px;
 }
 
@@ -78,16 +79,17 @@ margin-left: auto;
     background-color: rgb(200, 200, 200);
 }
 
-#bottomHeader{
-  position: relative;
+footer{
+  position: fixed;
   height: 50px;
-  width: auto;
+  width: 100%;
   bottom: 0px;
   left: 0px;
   background-color: lightblue;
   border:solid;
   border-color:solid black;
   border-left:transparent;
+  border-right:transparent;
   border-width:3px;
 }
 
