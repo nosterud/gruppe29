@@ -35,7 +35,7 @@ require 'config.php';
 			$sql->execute();
 			$count = 0;
 			while ($test = $sql->fetch()) {
-				if ($test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->fratid)) {
+				if ($test->dato == $dato && strtotime($tid1) < strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) > strtotime($test->fratid) && strtotime($tid2) < strtotime($test->tiltid)) {
 					$count += $ant;
 					if ($count + $test->num > 4) {
 						echo "Rommet har ikke plass! <br>";
@@ -48,7 +48,7 @@ require 'config.php';
 			} else {
 				if ($tid1 < $tid2) {
 					if ($dato > date("Y-m-d") || $dato == date("Y-m-d") && strtotime($tid1) > time()) {
-						for ($i = 1; $i < $ant; $i++) {
+						for ($i = 1; $i <= $ant; $i++) {
 							$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$i', $prosjektor);");
 							$sql->execute();
 						}
