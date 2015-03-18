@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 $nummer = test_input($_GET["nummer"]);
-$sql = $database->prepare("SELECT romnummer, dato, fratid, tiltid, student, prosjektor, max(antall) as num FROM reservasjon WHERE romnummer = $nummer GROUP BY student, romnummer, dato, fratid, tiltid ORDER BY dato, fratid ASC;");
+$sql = $database->prepare("SELECT romnummer, dato, fratid, tiltid, student, prosjektor, antall as num FROM reservasjon WHERE romnummer = '$nummer' ORDER BY dato, fratid ASC;");
 $sql->setFetchMode(PDO::FETCH_OBJ);
 $sql->execute();
 $count = 0;

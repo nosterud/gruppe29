@@ -19,14 +19,14 @@ require 'config.php';
 				//echo "Prosjektor nei<br>";
 				$prosjektor = 0;
 			}
-			$sql = $database->prepare("SELECT max(antall) as num, dato, fratid, tiltid, projsjektor FROM reservasjon where romnummer = $rom GROUP BY student, romnummer, dato, fratid, tiltid;");
+			$sql = $database->prepare("SELECT antall, dato, fratid, tiltid, prosjektor FROM reservasjon where romnummer = $rom AND dato = '$dato';");
 			$sql->setFetchMode(PDO::FETCH_OBJ);
 			$sql->execute();
 			$count = 0;
 			while ($test = $sql->fetch()) {
-				if ($test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid) && strtotime($test->fratid) <= strtotime($tid2) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($test->tiltid) >= strtotime($tid1) && strtotime($tid2) >= strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid)) {
-					$count += $ant;
-					if ($count + $test->num > 4) {
+				if (strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid) && strtotime($test->fratid) <= strtotime($tid2) || strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) >= strtotime($test->tiltid) && strtotime($test->tiltid) >= strtotime($tid1) || strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid) || strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) >= strtotime($test->tiltid)) {
+					$count += $test->antall;
+					if ($ant + $count > 4) {
 						echo "Rommet har ikke plass! <br>";
 						$rom = "";
 					}
@@ -41,10 +41,8 @@ require 'config.php';
 			} else {
 				if ($tid1 < $tid2) {
 					if ($dato > date("Y-m-d") || $dato == date("Y-m-d") && strtotime($tid1) > time()) {
-						for ($i = 1; $i <= $ant; $i++) {
-							$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$i', $prosjektor);");
-							$sql->execute();
-						}
+						$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$ant', $prosjektor);");
+						$sql->execute();
 						header("refresh: 1; url=../html/Layout.html");
 					} else {
 						echo "Bookingen kan ikke være før nå.";
