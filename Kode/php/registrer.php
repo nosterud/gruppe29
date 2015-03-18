@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 <link rel="stylesheet" type="text/css" href="../css/register.css">
 <?php
 	require 'config.php';
@@ -31,7 +32,7 @@
 			echo "Bruker registrert, du vil bli sendt tilbake til login siden.";
 			header("refresh: 5; url=login.php");
 		} else {
-			$passFeil1 = "Passordene må være like.";
+			$passFeil1 = "Ikke lik.";
 		}
 	}
 ?>
@@ -42,12 +43,37 @@
 	<div id="Logo"><img src="../../Bilder/westerdals.png">
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
-	Passord: <input id="passord" type="password" name="passord1"><span class="error">* <?php echo $passFeil1; ?></span><br><br>
-	Bekreft passord: <input id="passord2" type="password" name="passord2"><span class="error">* <?php echo $passFeil2; ?></span><br><br>
-	<input type="submit">
-	</form>
-
+<table>
+	<tr>
+		<td>Studentnummer:</td>
+		<td><input type="text" name="studentnummer"><span class="error">*</span></td>
+	</tr>
+	<tr>
+		<td><span class="error"><?php echo "$studFeil"; ?></span></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Passord:</td>
+		<td><input id="passord" type="password" name="passord1"><span class="error">*</span></td>
+	</tr>
+	<tr>
+		<td><span class="error"><?php echo "$passFeil1"; ?></span></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Bekreft passord:</td>
+		<td><input id="passord2" type="password" name="passord2"><span class="error">*</span></td>
+	</tr>
+	<tr>
+		<td><span class="error"><?php echo "$passFeil2"; ?></span></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td><input type="submit">
+		</td>
+	</tr>
+</table>
+</form>
 </section>
 
 <img id="pointer" src="../../Bilder/pointer.jpg">
