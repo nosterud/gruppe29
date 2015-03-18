@@ -10,31 +10,42 @@
 </head>
 
 <body>
+
+<!--TAGS HOVED WRAP OG HEADER m/BILDET-->
 	<section class="wrapper">
 		<div id="header">
 			<img id="logo" src="../../Bilder/westerdals.png">
 	</div>
 
 
+<!--TAGS FOR SETTING MENYEN-->
 	<div id="settings">
 		<form method="post" action="../php/Layout.php">
 			<nav>
 				<ul>
-					<li>
+
+					<!--TAGS FOR KALENDER INPUT-->
+					<li> 
 						<p>Date: <input type="date" id="date" name="bday"></p>
 					</li>
+
+					<!--TAGS FOR "FRA TID" INPUT-->
 			  		<li>
 			  			<label for="time">
 			  				Fra tid:
 			  					<input type="time" id="time" min="08:00" max="18:45" step="900" name="from_time">
 			  			</label>
 					</li>
+
+					<!--TAGS FOR "TIL TID" INPUT-->
 					<li>
 						<label for="time2">
 							Til tid:
 								<input type="time" id="time2" min="08:15" max="19:00" step="900" name="to_time">
 						</label>
 			  		</li>
+
+			  		<!--TAGS FOR ANTALL-->
 			  		<li>
 			  			Antall
 			  			<ul>
@@ -44,6 +55,8 @@
 							<li>4<input type="radio" name="quantity" value="4"></li>
 						</ul>
 			  		</li>
+
+			  		<!--TAGS FOR ROMLISTE-->
 			  		<li>
 			    		Rom
 			    		<ul>
@@ -58,6 +71,7 @@
 			    		</ul>
 			  		</li>
 			  		
+			  		<!--TAGS FOR PROJEKTOR VALG-->
 			  		<li>	
 			  				Projektor: <br>
 			  				Ja<input type="radio" name="Prosjektor" value="Ja" checked>
@@ -66,6 +80,8 @@
 			  		</li>
 
 				</ul>
+
+				<!--TAG FOR SUBMIT KNAPPEN-->
 					<input type="submit">
 			</nav>
 
@@ -73,7 +89,7 @@
 		</form>
 	</div>
 
-	<!--ROM KART -->
+	<!--TAGS FOR ROM KART -->
 		<div id="container">
        		<iframe class="alleRom" id="rom1" src="../php/rom.php?nummer=1"></iframe>
        		<iframe class="alleRom" id="rom2" src="../php/rom.php?nummer=2"></iframe>
