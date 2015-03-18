@@ -19,27 +19,20 @@ require 'config.php';
 				//echo "Prosjektor nei<br>";
 				$prosjektor = 0;
 			}
-			if ($prosjektor == 1) {
-				$sql = $database->prepare("SELECT romnummer, dato, fratid, tiltid, prosjektor FROM reservasjon WHERE prosjektor = 1;");
-				$sql->setFetchMode(PDO::FETCH_OBJ);
-				$sql->execute();
-				while($test = $sql->fetch()) {
-					if ($rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $prosjektor == 1 && $rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->fratid)) {
-						echo "Noen har allerede reservert prosjektoren på denne tiden<br>";
-						$tid1 = "";
-					}
-				}
-			}
-			$sql = $database->prepare("SELECT max(antall) as num, dato, fratid, tiltid FROM reservasjon where romnummer = $rom GROUP BY student, romnummer, dato, fratid, tiltid;");
+			$sql = $database->prepare("SELECT max(antall) as num, dato, fratid, tiltid, projsjektor FROM reservasjon where romnummer = $rom GROUP BY student, romnummer, dato, fratid, tiltid;");
 			$sql->setFetchMode(PDO::FETCH_OBJ);
 			$sql->execute();
 			$count = 0;
 			while ($test = $sql->fetch()) {
-				if ($test->dato == $dato && strtotime($tid1) < strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) > strtotime($test->fratid) && strtotime($tid2) < strtotime($test->tiltid)) {
+				if ($test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid) && strtotime($test->fratid) <= strtotime($tid2) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($test->tiltid) >= strtotime($tid1) && strtotime($tid2) >= strtotime($test->tiltid) || $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid)) {
 					$count += $ant;
 					if ($count + $test->num > 4) {
 						echo "Rommet har ikke plass! <br>";
 						$rom = "";
+					}
+					if ($prosjektor == 1 && $test->prosjektor == 1) {
+						echo "Noen har allerede reservert prosjektoren på denne tiden<br>";
+						$tid1 = "";
 					}
 				}
 			}

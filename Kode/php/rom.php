@@ -15,6 +15,7 @@ while ($item = $sql->fetch()) {
 		}
 	}
 }
+echo "<p>Rom $nummer</p>";
 echo "<p>$count / 4</p>";
 if ($count == 4) {
 	echo "<style>body{background-color:red;}</style>";
