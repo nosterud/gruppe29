@@ -1,6 +1,6 @@
 .wrapper{ 
 top:100px;	
-width:430px;
+width:300px;
 overflow: hidden;
 position: relative;
 margin-left: auto;
@@ -13,14 +13,18 @@ border-width:3px;
 
 #Logo{
 	position: relative;
-	left:100px;
+	left:30px;
 }
 
 #passord{
 	position: relative;
-	left: 0px;
+	left: 53px;
 }
 
+#passord2{
+	position: relative;
+	left:-10px;
+}
 
 #pointer{
 	position: absolute;
@@ -29,7 +33,4 @@ border-width:3px;
 	bottom: 0;
 	left:0;
 
-}
-.error{
-	color: rgb(255, 0, 0);
 }
