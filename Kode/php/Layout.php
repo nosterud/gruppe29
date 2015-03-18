@@ -45,14 +45,14 @@ require 'config.php';
 						$sql->execute();
 						header("refresh: 1; url=../html/Layout.html");
 					} else {
-						echo "Bookingen kan ikke være før nå.";
+						echo "Bookingen er for tidlig.";
 					}
 				} else {
-					echo "Start-tiden må være mindre enn slutt-tiden!";
+					echo "Start-tiden er etter slutt-tiden!";
 				}
 			}
 		} else {
-			echo "Du er ikke logget inn, du vil bli dirigert til login-siden.";
+			echo "Du er ikke logget inn, du vil nå bli sendt til login-siden.";
 			header("refresh: 5; url=login.php");
 		}
 		echo "<br><a href='../html/Layout.html'>Tilbake!</a>";
