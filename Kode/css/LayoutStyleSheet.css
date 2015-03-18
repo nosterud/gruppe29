@@ -26,14 +26,19 @@ margin-right: auto;
 margin-left: auto;
 }
 
+#headbilde{
+  position: relative;
+  width: 1300px;
+  height: 90px;
+}
 
 #settings{
-  position: relative;
   height: 50px;
   width: auto;
   background-color: lightblue;
   top: 155px;
-  left: 0px;
+  position: fixed;
+  left:-10px;
   border-style: solid;
   border-color:black;
   border-left:transparent;
@@ -64,7 +69,6 @@ margin-left: auto;
   width: 1351px;
   height: 690px;
 }
-
 .alleRom{
   position: absolute;
   border-style: solid;
@@ -137,12 +141,6 @@ top: 177px;
 transform: skew(-28deg, 13deg);
 }
 
-
-
-
-
-
-
 footer{
   position: absolute;
   height: 50px;
@@ -156,8 +154,24 @@ footer{
   border-right:transparent;
   border-width:3px;
 }
+.footerBilde{
+  left:0;
+  height: 90px;
+  width:1300px;
 
+}
 
+#settings{
+  position: relative;
+  height: 50px;
+  width: auto;
+  top: 155px;
+  left:0px;
+  background-color: lightblue;
+  border-style: solid;
+  border-color: solid black;
+  border-width: 3px;
+}
 
 
 <!--nav-bar-->
@@ -195,7 +209,10 @@ ul li:hover {
   background: #555;
   color: #fff;
 }
+romkart:target{
+  color:black;
 
+}
 
 ul li ul {
   padding: 0;
