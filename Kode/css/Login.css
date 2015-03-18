@@ -1,6 +1,6 @@
 .wrapper{ 
 top:100px;	
-width:300px;
+width:330px;
 overflow: hidden;
 position: relative;
 margin-left: auto;
@@ -9,21 +9,11 @@ border:double;
 border-color:solid black;
 overflow: hidden;
 border-width:3px;
-
-
-
- 
 }
 
 #Logo{
 position: relative;
 left:30px;
-}
-
-
-#passord{
-	position: relative;
-	left: 53px;
 }
 
 .error{
