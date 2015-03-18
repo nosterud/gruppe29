@@ -15,7 +15,7 @@
 			$studentnummer = test_input($_POST["studentnummer"]);
 		}
 		if (empty($_POST["passord"])) {
-			$passFeil = "Obligatorisk!";
+			$passFeil = "<br>Obligatorisk!";
 		} else {
 			$passord = test_input($_POST["passord"]);
 		}
@@ -42,17 +42,21 @@
 	<div id="Logo"><img src="../../Bilder/westerdals.png">
 
 
-<form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
-	Passord:                    <input id="passord" type="password" name="passord"><span class="error">* <?php echo $passFeil; ?></span><br><br>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
+<table>
+	<tr><td>Studentnummer:</td> <td><input type="text" name="studentnummer"><span class="error">*</span></td></tr> <tr><td><span class="error"><?php echo $studFeil; ?></td></tr></span><br><br>
+	<tr><td>Passord:</td> <td><input id="passord" type="password" name="passord"><span class="error">*</span></td></tr> <tr><td><span class="error"><?php echo $passFeil; ?></td></tr></span><br><br>
 	
-	<input type="submit">
+	<tr><td><input type="submit"></td></tr>
+</table>
 </form>
 <br>
 <form action="registrer.php"><input value="Registrer deg" type="submit"></form>
 
-
-
 </section>	
+
+<img id="hottie" src="../../Bilder/cof1925.jpg">
+
+
 </body>
 </html>

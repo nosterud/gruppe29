@@ -21,10 +21,15 @@ left:30px;
 }
 
 
-#passord{
-	position: relative;
-	left: 53px;
+
+#hottie{
+	position: absolute;
+	height:400px;
+	width: 400px;
+	bottom:0;
+	right:0px;
 }
+
 
 .error{
 	color: rgb(255, 0, 0);

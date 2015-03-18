@@ -41,10 +41,13 @@
 	<div id="Logo"><img src="../../Bilder/westerdals.png">
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" accept-charset="utf-8">
-	Studentnummer: <input type="text" name="studentnummer"><span class="error">* <?php echo $studFeil; ?></span><br><br>
-	Passord: <input id="passord" type="password" name="passord1"><span class="error">* <?php echo $passFeil1; ?></span><br><br>
-	Bekreft passord: <input id="passord2" type="password" name="passord2"><span class="error">* <?php echo $passFeil2; ?></span><br><br>
-	<input type="submit">
+	<table>
+	<tr><td>Studentnummer:</td> <td><input type="text" name="studentnummer"><span class="error">*</span></td></tr> <tr><td><span class="error"> <?php echo $studFeil; ?></td></tr></span><br><br>
+	<tr><td>Passord:</td><td> <input id="passord" type="password" name="passord1"><span class="error">*</span></td></tr> <tr><td><span class="error"> <?php echo $passFeil1; ?></td></tr></span><br><br>
+	<tr><td>Bekreft passord:</td><td> <input id="passord2" type="password" name="passord2"><span class="error">*</span></td></tr> <tr><td><span class="error"> <?php echo $passFeil2; ?></td></tr></span><br><br>
+	
+	<tr><td><input type="submit"></td></tr>
+</table>
 	</form>
 
 </section>

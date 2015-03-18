@@ -19,30 +19,35 @@ require 'config.php';
 				//echo "Prosjektor nei<br>";
 				$prosjektor = 0;
 			}
-			$sql = $database->prepare("SELECT antall, dato, fratid, tiltid, prosjektor FROM reservasjon where romnummer = $rom AND dato = '$dato';");
-			$sql->setFetchMode(PDO::FETCH_OBJ);
-			$sql->execute();
-			$count = 0;
-			while ($test = $sql->fetch()) {
-				if (strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid) && strtotime($test->fratid) <= strtotime($tid2) || strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) >= strtotime($test->tiltid) && strtotime($test->tiltid) >= strtotime($tid1) || strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid2) <= strtotime($test->tiltid) || strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) >= strtotime($test->tiltid)) {
-					$count += $test->antall;
-					if ($ant + $count > 4) {
-						echo "Rommet har ikke plass! <br>";
-						$rom = "";
-					}
-					if ($prosjektor == 1 && $test->prosjektor == 1) {
+			if ($prosjektor == 1) {
+				$sql = $database->prepare("SELECT romnummer, dato, fratid, tiltid, prosjektor FROM reservasjon WHERE prosjektor = 1;");
+				$sql->setFetchMode(PDO::FETCH_OBJ);
+				$sql->execute();
+				while($test = $sql->fetch()) {
+					if ($rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) >= strtotime($test->fratid) && strtotime($tid1) < strtotime($test->tiltid) || $prosjektor == 1 && $rom == $test->romnummer && $test->dato == $dato && strtotime($tid1) <= strtotime($test->fratid) && strtotime($tid2) > strtotime($test->fratid)) {
 						echo "Noen har allerede reservert prosjektoren på denne tiden<br>";
 						$tid1 = "";
 					}
 				}
 			}
+			$sql = $database->prepare("SELECT COUNT(student) as num FROM reservasjon where romnummer = $rom;");
+			$sql->setFetchMode(PDO::FETCH_OBJ);
+			$sql->execute();
+			while ($test = $sql->fetch()) {
+				if ($ant + $test->num > 4) {
+					echo "Rommet har ikke plass! <br>";
+					$rom = "";
+				}
+			}
 			if ($dato == "" || $tid1 == "" || $tid2 == "" || $rom == 0 || $ant == 0 || $bruker == "") {
-				echo "Noe gikk galt!";
+				echo "Alle feltene må være fylt!";
 			} else {
 				if ($tid1 < $tid2) {
 					if ($dato > date("Y-m-d") || $dato == date("Y-m-d") && strtotime($tid1) > time()) {
-						$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$ant', $prosjektor);");
-						$sql->execute();
+						for ($i = 1; $i < $ant; $i++) {
+							$sql = $database->prepare("INSERT INTO reservasjon (romnummer, dato, fratid, tiltid, student, antall, prosjektor) VALUES ('$rom', '$dato', '$tid1', '$tid2', '$bruker', '$i', $prosjektor);");
+							$sql->execute();
+						}
 						header("refresh: 1; url=../html/Layout.html");
 					} else {
 						echo "Bookingen kan ikke være før nå.";
@@ -53,7 +58,7 @@ require 'config.php';
 			}
 		} else {
 			echo "Du er ikke logget inn, du vil bli dirigert til login-siden.";
-			header("refresh: 5; url=login.php");
+			header("refresh: 10; url=login.php");
 		}
 		echo "<br><a href='../html/Layout.html'>Tilbake!</a>";
 	}
