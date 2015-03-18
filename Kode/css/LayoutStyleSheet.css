@@ -1,3 +1,4 @@
+/*Wrapperen som omfatter alt på layout siden*/
 .wrapper{
 width:100%;
 overflow: hidden;
@@ -5,7 +6,7 @@ position: absolute;
 left:0px;
  
 }
-
+/*Header div som inneholder logo*/
 #header{
 height: 120px;
 width: auto;
@@ -26,25 +27,23 @@ margin-right: auto;
 margin-left: auto;
 }
 
-#headbilde{
-  position: relative;
-  width: 1300px;
-  height: 90px;
-}
 
+/*Settings tabben med alle innputs*/
 #settings{
   height: 50px;
   width: auto;
   background-color: lightblue;
   top: 155px;
-  position: fixed;
-  left:-10px;
+  position: relative;
+  left: 0px;
   border-style: solid;
-  border-color:black;
+  border-color:solid black;
   border-left:transparent;
   border-right:transparent;
   border-width: 3px;
 }
+
+
 
 .ui-datepicker-calendar {
   background-color: white; 
@@ -53,7 +52,7 @@ margin-left: auto;
 
 
 
-
+/*Container med romkartet*/
 #container {
   height: 1000px;
   width: auto;
@@ -63,6 +62,7 @@ margin-left: auto;
   margin-right: auto; 
 
 }
+    /*img tag for bygning bilde*/
 
 #bygning{
 width: 1028px;
@@ -72,6 +72,7 @@ top: 0px;
 right: -329px;
 z-index: -1;
 }
+    /*Felles klasse for alle rommene*/
 .alleRom{
   position: absolute;
   border-style: solid;
@@ -144,6 +145,8 @@ top: 174px;
 transform: skew(-24deg, 15deg);
 }
 
+/*Footer med footer bildet*/
+
 footer{
   position: absolute;
   height: 50px;
@@ -164,17 +167,7 @@ footer{
 
 }
 
-#settings{
-  position: relative;
-  height: 50px;
-  width: auto;
-  top: 155px;
-  left:0px;
-  background-color: lightblue;
-  border-style: solid;
-  border-color: solid black;
-  border-width: 3px;
-}
+
 
 
 <!--nav-bar-->
