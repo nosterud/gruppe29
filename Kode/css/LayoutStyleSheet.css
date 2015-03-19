@@ -26,6 +26,33 @@ position: relative;
 margin-right: auto;
 margin-left: auto;
 }
+#mario{
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  z-index: -1;
+}
+
+#footer{
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  background-color: lightblue;
+  border:solid;
+  border-color:solid black;
+  border-left:transparent;
+  border-right:transparent;
+  border-width:3px;
+}
+.footerBilde{
+  left:0;
+  height: 90px;
+  width:100%;
+}
+
+
 
 
 /*Settings tabben med alle innputs*/
@@ -147,25 +174,9 @@ transform: skew(-24deg, 15deg);
 
 /*Footer med footer bildet*/
 
-footer{
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  bottom: 0px;
-  left: 0px;
-  background-color: lightblue;
-  border:solid;
-  border-color:solid black;
-  border-left:transparent;
-  border-right:transparent;
-  border-width:3px;
-}
-.footerBilde{
-  left:0;
-  height: 90px;
-  width:100%;
 
 }
+
 
 
 
