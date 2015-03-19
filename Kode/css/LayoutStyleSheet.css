@@ -29,8 +29,14 @@ margin-left: auto;
 #mario{
   position: fixed;
   bottom: 50px;
-  left: 50px;
+  left: 0px;
   z-index: -1;
+}
+#pipe{
+  position: relative;
+left: -38px;
+top: -31px;
+width: 389px;
 }
 
 #footer{
@@ -69,6 +75,7 @@ margin-left: auto;
   border-right:transparent;
   border-width: 3px;
 }
+
 
 
 
