@@ -11,12 +11,9 @@ require 'config.php';
 			$tid2 = test_input($_POST["to_time"]);
 			$ant = test_input($_POST["quantity"]);
 			$rom = test_input($_POST["rom"]);
-			//echo $bruker . "<br>" . $dato . "<br>" . $tid1 . "<br>" . $tid2 . "<br>" . $ant . "<br>" . $rom . "<br>";
 			if ($_POST["Prosjektor"] == "Ja") {
-				//echo "Prosjektor ja<br>";
 				$prosjektor = 1;
 			} else {
-				//echo "Prosjektor nei<br>";
 				$prosjektor = 0;
 			}
 			$sql = $database->prepare("SELECT antall, dato, fratid, tiltid, prosjektor FROM reservasjon where romnummer = $rom AND dato = '$dato';");
@@ -37,7 +34,7 @@ require 'config.php';
 				}
 			}
 			if ($dato == "" || $tid1 == "" || $tid2 == "" || $rom == 0 || $ant == 0 || $bruker == "") {
-				echo "Noe gikk galt!";
+				echo "Noe gikk galt, sjekk om du har fylt ut alle feltene riktig.";
 			} else {
 				if ($tid1 < $tid2) {
 					if ($dato > date("Y-m-d") || $dato == date("Y-m-d") && strtotime($tid1) > time()) {
