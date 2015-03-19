@@ -39,8 +39,18 @@ top: -31px;
 width: 389px;
 }
 
+#background{
+  position: absolute;
+height: 789px;
+width: 100%;
+top: 51px;
+left: 0px;
+background-color: rgb(100,149,237);
+  z-index: -2;
+}
+
 #footer{
-  position: fixed;
+  position: absolute;
   height: 50px;
   width: 100%;
   bottom: 0px;
@@ -94,6 +104,7 @@ width: 389px;
   position: relative;
   left:0px;
   margin-right: auto; 
+
 
 }
     /*img tag for bygning bilde*/
