@@ -110,11 +110,11 @@ background-color: rgb(100,149,237);
     /*img tag for bygning bilde*/
 
 #bygning{
-width: 1028px;
+width: 991px;
 height: 690px;
 position: relative;
 top: 0px;
-right: -329px;
+right: -362px;
 z-index: -1;
 }
     /*Felles klasse for alle rommene*/
@@ -128,62 +128,62 @@ z-index: -1;
 #rom1{
 height: 178px;
 width: 160px;
-left: 571px;
-top: 297px;
-transform: skew(-34deg, 17deg);
+left: 585px;
+top: 303px;
+transform: skew(-33deg, 17deg);
 }
 
 #rom2{
 height: 171px;
-width: 157px;
-left: 412px;
-top: 249px;
-transform: skew(-37deg, 18deg);
+width: 154px;
+left: 432px;
+top: 254px;
+transform: skew(-36deg, 18deg);
 }
 
 #rom3{
 height: 194px;
-width: 167px;
-left: 846px;
-top: 374px;
-transform: skew(-28deg, 18deg);
+width: 162px;
+left: 853px;
+top: 380px;
+transform: skew(-27deg, 17deg);
 }
 
 #rom4{
-height: 198px;
-width: 171px;
+height: 202px;
+width: 167px;
 left: 1018px;
-top: 428px;
+top: 433px;
 transform: skew(-24deg, 18deg);
 }
 
 #rom5{
-height: 140px;
-width: 146px;
-left: 593px;
-top: 27px;
-transform: skew(-36deg, 14deg);
+height: 137px;
+width: 141px;
+left: 609px;
+top: 29px;
+transform: skew(-35deg, 15deg);
 
 }
 
 #rom6{
-height: 144px;
+height: 149px;
 width: 148px;
-left: 741px;
+left: 751px;
 top: 68px;
-transform: skew(-33deg, 16deg);
+transform: skew(-32deg, 16deg);
 }
 
 #rom7{
-height: 158px;
-width: 149px;
-left: 994px;
+height: 164px;
+width: 146px;
+left: 1000px;
 top: 133px;
 transform: skew(-26deg, 15deg);
 }
 
 #rom8{
-height: 161px;
+height: 170px;
 width: 157px;
 left: 1147px;
 top: 174px;
