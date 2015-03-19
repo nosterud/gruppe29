@@ -52,7 +52,7 @@ require 'config.php';
 				}
 			}
 		} else {
-			echo "Du er ikke logget inn, du vil bli sendt til login-siden om noen litt. <br>";
+			echo "Du er ikke logget inn, du vil bli sendt til login-siden om et par sekunder. <br>";
 			header("refresh: 5; url=login.php");
 			echo "<br><a href='login.php'>Klikk her</a> om du ikke blir sendt automatisk.";
 		}
